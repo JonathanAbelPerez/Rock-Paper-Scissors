@@ -1,21 +1,21 @@
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     playerSelection = "rock"
-    roundResult.textContent = 
+    roundResult.textContent =
         playRound(playerSelection, getComputerChoice())
 })
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
     playerSelection = "paper"
-    roundResult.textContent = 
+    roundResult.textContent =
         playRound(playerSelection, getComputerChoice())
 })
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
     playerSelection = "scissors"
-    roundResult.textContent = 
+    roundResult.textContent =
         playRound(playerSelection, getComputerChoice())
 })
 
@@ -28,7 +28,7 @@ let result = "0"
 let playerScore = 0;
 let computerScore = 0;
 
-function playRound(playerSelection, computerSelection) {   
+function playRound(playerSelection, computerSelection) {
     const pScore = document.querySelector('#player-score');
     const cScore = document.querySelector('#computer-score');
 
@@ -66,8 +66,20 @@ function playRound(playerSelection, computerSelection) {
 
     pScore.textContent = playerScore
     cScore.textContent = computerScore
-    return result;
 
+    if (playerScore === 5) {
+        alert("you win! " + playerScore + " to " + computerScore)
+        playerScore = 0
+        computerScore = 0
+    } else if (computerScore === 5) {
+        alert("you lose! " + playerScore + " to " + computerScore)
+        playerScore = 0
+        computerScore = 0
+    }
+
+    return result;
 }
+
+
 
 
